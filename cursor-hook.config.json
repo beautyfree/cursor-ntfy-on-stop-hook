@@ -18,7 +18,7 @@
   "hooks": {
     "stop": [
       {
-        "command": "node $HOME/.cursor/hooks/ntfy-on-stop/dist/ntfy-on-stop.js"
+        "command": "node dist/ntfy-on-stop.js"
       }
     ]
   }
