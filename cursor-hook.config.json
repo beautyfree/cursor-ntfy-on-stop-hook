@@ -1,0 +1,25 @@
+{
+  "installCommand": "npm i --no-save --silent && npm run build || true",
+  "requiredEnv": [
+    {
+      "name": "CURSOR_HOOK_NTFY_TOPIC",
+      "description": "ntfy topic name to receive notifications (e.g. cursor-agent)"
+    },
+    {
+      "name": "CURSOR_HOOK_NTFY_SERVER",
+      "description": "Optional: custom ntfy server URL (default: https://ntfy.sh)"
+    }
+  ],
+  "files": {
+    "hooks": [
+      "hooks/ntfy-on-stop"
+    ]
+  },
+  "hooks": {
+    "stop": [
+      {
+        "command": "node $HOME/.cursor/hooks/ntfy-on-stop/dist/ntfy-on-stop.js"
+      }
+    ]
+  }
+}
